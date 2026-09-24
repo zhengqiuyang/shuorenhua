@@ -2,6 +2,12 @@
 
 > 把 OKR、MVP、「对齐颗粒度」翻译成人话 —— 大厂新人的第一本职场词典。
 
+[![词条数](https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fzhengqiuyang%2Fshuorenhua%2Fmain%2Fdocs%2Fpublic%2Fterms.json&query=%24.count&label=%E8%AF%8D%E6%9D%A1&color=4b9eff)](https://zhengqiuyang.github.io/shuorenhua/)
+[![分类](https://img.shields.io/badge/%E5%88%86%E7%B1%BB-8_%E5%A4%A7%E9%A2%86%E5%9F%9F-9f6bff)](https://zhengqiuyang.github.io/shuorenhua/terms/)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](./LICENSE)
+[![GitHub stars](https://img.shields.io/github/stars/zhengqiuyang/shuorenhua?style=social)](https://github.com/zhengqiuyang/shuorenhua/stargazers)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](./CONTRIBUTING.md)
+
 一个新人进入大厂，往往要在「黑话考试」里裸考：会上听到「对齐一下颗粒度」「先找抓手再落地」，文档里满是 PRD、埋点、灰度、北极星指标——每个字都认识，连起来就听不懂。
 
 **「说人话」收集并翻译这些术语和黑话，为职场新人提供一个可搜索、可共建的在线词典。**
@@ -10,8 +16,8 @@
 
 - **八大分类体系**：中英缩写（OKR/GMV）→ 黑话行话（抓手/闭环/拉通）→ 业务与增长（埋点/灰度/种草）→ 研发协作（提测/联调/降级）→ 职场文化（双月会/背锅/画饼）→ 财务与经营（毛利/烧钱率/LTV）→ 组织与人力（职级/竞业/N+1）→ AI 时代（幻觉/RAG/Token），按新人真实困惑组织。
 - **结构化词条（当前 147 条）**：每个词条都有「一句话人话解释 + 详细解释 + 真实会议室例句 + 常见误解 + 相关词条」，不是一坨文字。
-- **数据与产品分离**：词条存在 `data/*.json`，站点只是第一个展示壳。同一份数据可以直接被浏览器插件、飞书/企微机器人、API 复用（构建时导出 `docs/public/terms.json`）。
-- **中文全文搜索**：基于 Intl.Segmenter 分词，搜「对齐」「灰度」都能命中。
+- **数据与产品分离**：词条存在 `data/*.json`，站点只是第一个展示壳。聚合数据直接可用：[`docs/public/terms.json`](https://raw.githubusercontent.com/zhengqiuyang/shuorenhua/main/docs/public/terms.json)，浏览器插件、飞书/企微机器人都能复用。
+- **中文全文搜索 + 零结果闭环**：基于 Intl.Segmenter 分词，搜「对齐」「灰度」都能命中；查不到的词一键「问 AI」或「贡献词条」，零结果搜索会被记录下来，成为内容路线图。
 - **人人可贡献**：发 Issue 就能收词，提 PR 就能上榜；校验脚本自动检查必填字段、id 冲突和 related 引用。
 
 ## 🚀 快速开始
@@ -26,7 +32,9 @@ npm run validate   # 只做数据校验，并导出 docs/public/terms.json
 
 ## 📖 在线访问
 
-部署到 GitHub Pages 后在此处填写站点地址（`.github/workflows/deploy.yml` 已配好自动部署，见下方「部署」）。
+**👉 https://zhengqiuyang.github.io/shuorenhua/**
+
+推送到 `main` 分支后 GitHub Actions 自动构建部署（见下方「部署」）。
 
 ## 🗂️ 项目结构
 
@@ -58,7 +66,7 @@ npm run validate   # 只做数据校验，并导出 docs/public/terms.json
   "term": "OKR",           // 必填，展示名
   "expand": "Objectives and Key Results",  // 选填，英文全称
   "aliases": ["目标与关键结果"],            // 选填
-  "category": "abbr",      // 必填：abbr / jargon / business / engineering / culture
+  "category": "abbr",      // 必填：abbr / jargon / business / engineering / culture / finance / hr / ai
   "summary": "一句话人话解释",              // 必填
   "detail": "详细解释",                    // 必填
   "usage": "会议室真实例句",                // 必填
@@ -93,6 +101,8 @@ npm run validate   # 只做数据校验，并导出 docs/public/terms.json
 - [nbnhhsh](https://github.com/itorr/nbnhhsh)：拼音缩写翻译，形态先驱
 - [ali-words](https://github.com/justjavac/ali-words)：互联网黑话词汇表
 - [chinese-internet-jargon](https://github.com/mcsrainbow/chinese-internet-jargon)：中文黑话解释词典
+
+[![Star History Chart](https://api.star-history.com/svg?repos=zhengqiuyang/shuorenhua&type=Date)](https://star-history.com/#zhengqiuyang/shuorenhua&Date)
 
 ## License
 

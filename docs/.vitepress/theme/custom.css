@@ -3,3 +3,46 @@
   --vp-home-hero-name-color: transparent;
   --vp-home-hero-name-background: -webkit-linear-gradient(120deg, #4b9eff 30%, #9f6bff);
 }
+
+/* 零结果搜索引导块（由 SearchEnhancer 注入，样式对齐搜索弹窗） */
+.sr-zero-result {
+  margin: 4px 20px 20px;
+  padding: 14px 16px;
+  border: 1px dashed var(--vp-c-divider);
+  border-radius: 10px;
+  background: var(--vp-c-bg-soft);
+}
+.sr-zero-result p {
+  margin: 0 0 10px;
+  font-size: 14px;
+  color: var(--vp-c-text-1);
+}
+.sr-actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.sr-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 5px 12px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  border: 1px solid var(--vp-c-brand-1);
+  color: var(--vp-c-brand-1);
+  text-decoration: none;
+  transition: background 0.2s;
+}
+.sr-btn:hover {
+  background: var(--vp-c-brand-soft);
+  text-decoration: none;
+}
+.sr-btn.sr-issue {
+  border-color: var(--vp-c-divider);
+  color: var(--vp-c-text-2);
+}
+.sr-btn.sr-issue:hover {
+  background: var(--vp-c-bg-mute);
+}

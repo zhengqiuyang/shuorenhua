@@ -1,4 +1,4 @@
-import { readFileSync, readdirSync, writeFileSync, mkdirSync } from 'node:fs'
+import { readFileSync, readdirSync, writeFileSync, mkdirSync, statSync } from 'node:fs'
 import { join, dirname } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { CATEGORIES } from '../lib/terms.mjs'
@@ -47,10 +47,16 @@ if (errors.length) {
 
 terms.sort((a, b) => a.term.localeCompare(b.term, 'zh'))
 
+// 时间戳取数据文件的最新修改时间（而非构建时刻），保证产物确定性、不弄脏 git
+const dataFiles = readdirSync(DATA_DIR).filter(f => f.endsWith('.json'))
+const lastModified = dataFiles
+  .map(f => statSync(join(DATA_DIR, f)).mtimeMs)
+  .reduce((a, b) => Math.max(a, b), 0)
+
 mkdirSync(PUBLIC_DIR, { recursive: true })
 writeFileSync(
   join(PUBLIC_DIR, 'terms.json'),
-  JSON.stringify({ updatedAt: new Date().toISOString(), count: terms.length, categories: CATEGORIES, terms }, null, 2)
+  JSON.stringify({ updatedAt: new Date(lastModified).toISOString(), count: terms.length, categories: CATEGORIES, terms }, null, 2)
 )
 
 console.log(`数据校验通过：共 ${terms.length} 个词条，已生成 docs/public/terms.json（供未来插件 / 机器人 / API 使用）`)

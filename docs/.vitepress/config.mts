@@ -32,6 +32,7 @@ export default defineConfig({
   description:
     '把 OKR、MVP、「对齐颗粒度」翻译成人话 —— 大厂新人的第一本职场黑话与术语词典',
   base: process.env.BASE || '/',
+  sitemap: { hostname: 'https://zhengqiuyang.github.io' },
   head: [
     ['link', { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' }],
     ['meta', { property: 'og:title', content: '说人话 · 职场黑话与术语词典' }],
