@@ -2,7 +2,7 @@ import { defineConfig } from 'vitepress'
 import { loadTerms, CATEGORIES, termLink } from '../../lib/terms.mjs'
 
 const terms = loadTerms()
-const REPO = 'https://github.com/your-name/shuorenhua'
+const REPO = 'https://github.com/zhengqiuyang/shuorenhua'
 
 // 词条分组的侧边栏（构建时从 data/ 目录生成，无需手动维护）
 const termSidebar = Object.entries(CATEGORIES).map(([key, label]) => ({

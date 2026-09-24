@@ -2,7 +2,7 @@
 import { computed } from 'vue'
 import { data as pages } from '../terms.data'
 
-const ORDER = ['abbr', 'jargon', 'business', 'engineering', 'culture']
+const ORDER = ['abbr', 'jargon', 'business', 'engineering', 'culture', 'finance', 'hr', 'ai']
 
 const groups = computed(() => {
   const list = pages.filter(p => p.frontmatter?.category)

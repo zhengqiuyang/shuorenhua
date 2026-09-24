@@ -17,10 +17,13 @@ title: 贡献指南
    | 文件 | 分类 | 例子 |
    |---|---|---|
    | `abbr.json` | 中英缩写 | OKR、GMV、PRD |
-   | `jargon.json` | 黑话行话 | 对齐、抓手、闭环 |
-   | `business.json` | 业务与增长 | 埋点、灰度、北极星指标 |
-   | `engineering.json` | 研发协作 | 提测、联调、排期 |
+   | `jargon.json` | 黑话行话 | 对齐、抓手、拉通 |
+   | `business.json` | 业务与增长 | 埋点、灰度、种草 |
+   | `engineering.json` | 研发协作 | 提测、联调、降级 |
    | `culture.json` | 职场文化 | 双月会、背锅、画饼 |
+   | `finance.json` | 财务与经营 | 毛利、烧钱率、LTV |
+   | `hr.json` | 组织与人力 | 职级、竞业、N+1 |
+   | `ai.json` | AI 时代 | 幻觉、RAG、Token |
 
 2. 按下面的 Schema 添加一个词条对象。
 3. 运行 `npm run validate` 通过校验。
