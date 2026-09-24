@@ -1,0 +1,42 @@
+name: 新增词条
+description: 提议一个新词条，维护者会整理入库
+labels: ['新词条']
+body:
+  - type: input
+    id: term
+    attributes:
+      label: 词条名称
+      placeholder: 例如：北极星指标、灰度发布、一号位
+    validations:
+      required: true
+  - type: dropdown
+    id: category
+    attributes:
+      label: 分类
+      options:
+        - 中英缩写（abbr）
+        - 黑话行话（jargon）
+        - 业务与增长（business）
+        - 研发协作（engineering）
+        - 职场文化（culture）
+    validations:
+      required: true
+  - type: textarea
+    id: summary
+    attributes:
+      label: 一句话人话解释
+      placeholder: 像给刚入职的朋友解释，30~60 字
+    validations:
+      required: true
+  - type: textarea
+    id: usage
+    attributes:
+      label: 会议室真实例句
+      placeholder: 写一句你真的听到的说法
+    validations:
+      required: true
+  - type: textarea
+    id: extra
+    attributes:
+      label: 补充（选填）
+      placeholder: 英文全称、别名、常见误解、相关词条……

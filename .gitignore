@@ -1,0 +1,8 @@
+node_modules/
+docs/.vitepress/dist/
+docs/.vitepress/cache/
+docs/public/terms.json
+# 词条页由 scripts/gen-pages.mjs 从 data/ 自动生成
+docs/terms/*
+!docs/terms/index.md
+.DS_Store

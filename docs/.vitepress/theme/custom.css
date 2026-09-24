@@ -1,0 +1,5 @@
+/* 全站少量定制样式 */
+:root {
+  --vp-home-hero-name-color: transparent;
+  --vp-home-hero-name-background: -webkit-linear-gradient(120deg, #4b9eff 30%, #9f6bff);
+}

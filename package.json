@@ -1,0 +1,20 @@
+{
+  "name": "shuorenhua",
+  "version": "0.1.0",
+  "description": "说人话 · 职场黑话与术语词典 —— 把 OKR、MVP、「对齐颗粒度」翻译成人话，帮职场新人快速听懂会议室",
+  "type": "module",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "dev": "node scripts/validate.mjs && node scripts/gen-pages.mjs && vitepress dev docs",
+    "build": "node scripts/validate.mjs && node scripts/gen-pages.mjs && vitepress build docs",
+    "preview": "vitepress preview docs",
+    "validate": "node scripts/validate.mjs",
+    "gen": "node scripts/validate.mjs && node scripts/gen-pages.mjs"
+  },
+  "devDependencies": {
+    "vitepress": "^1.6.3"
+  }
+}
